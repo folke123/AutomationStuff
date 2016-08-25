@@ -32,6 +32,11 @@ GroupAdd, Explorer, ahk_class CabinetWClass
 ^w::Send, !{f4}
 #IfWinActive
 
+;Close command line or git-bash with CTRL + W
+#IfWinActive, ahk_exe cmd.exe
+^w::Send, !{f4}
+#IfWinActive
+
 ;Close Outlook with CTRL + W and search with CTRL + F
 #IfWinActive, ahk_class rctrl_renwnd32
 ^f::Send, {CtrlDown}e{CtrlUp}
