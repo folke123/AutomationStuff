@@ -3,47 +3,57 @@ SetBatchLines, -1
 GroupAdd, Explorer, ahk_class CabinetWClass
 
 
-
+;Open my git folder
 #1::Run C:\gits
 
+;Open git-bash in current folder
 #c::OpenBashInCurrent()
 
+;Close Outlook messages with CTRL + W and search with CTRL + F
 #IfWinActive .* - Message .*
 ^f::Send, {f4}
 ^w::Send, !{f4}
 #IfWinActive
 
+;Close Outlook meetings with CTRL + W and search with CTRL + F
 #IfWinActive .* - Meeting .*
 ^f::Send, {f4}
 ^w::Send, !{f4}
 #IfWinActive
 
+;Minimize slack to tray with CTRL + W
 #IfWinActive .*Slack - QlikDev.*
-^w::Send, !{f4}
+;^w::Send, !{f4}
+^w::Send, #{Down}
 #IfWinActive
 
+;Close Notepad with CTRL + W
 #IfWinActive .* - Notepad.*
 ^w::Send, !{f4}
 #IfWinActive
 
+;Close Outlook with CTRL + W and search with CTRL + F
 #IfWinActive, ahk_class rctrl_renwnd32
 ^f::Send, {CtrlDown}e{CtrlUp}
 ^w::Send, !{f4}
 #IfWinActive
 
+;Create text file on desktop with CTRL + T if the desktop is active
 #IfWinActive, ahk_class Progman
 ^t::CreateTextFileOnDesktop()
 #IfWinActive
 
+;Create text file on desktop with CTRL + T if the desktop is active
 #IfWinActive, ahk_class WorkerW
 ^t::CreateTextFileOnDesktop()
 #IfWinActive
 
-
+;Create text file in current folder with CTRL + T
 #IfWinActive, ahk_class CabinetWClass
 ^t::CreateTextFileInCurrent()
 #IfWinActive
 
+;Create text file in current folder with CTRL + T
 #IfWinActive, ahk_class ExploreWClass") 
 ^t::CreateTextFileInCurrent()
 #IfWinActive
