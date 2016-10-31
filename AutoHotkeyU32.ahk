@@ -32,8 +32,13 @@ GroupAdd, Explorer, ahk_class CabinetWClass
 ^w::Send, !{f4}
 #IfWinActive
 
-;Close command line or git-bash with CTRL + W
+;Close command line with CTRL + W
 #IfWinActive, ahk_exe cmd.exe
+^w::Send, !{f4}
+#IfWinActive
+
+;Close command git-bash with CTRL + W
+#IfWinActive, ahk_exe sh.exe
 ^w::Send, !{f4}
 #IfWinActive
 
